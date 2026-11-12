@@ -1,7 +1,8 @@
 // Spacefast config. tools/build-site.mjs copies this into _site/; Spacefast reads it at publish
 // and never serves it. See https://spacefast.com/docs/config-file/
 {
-  "name": "Lectio"
-  // After the first publish, pin the Space so every later publish updates it, e.g.
-  // "space": "lectio"
+  "name": "Lectio",
+  // The live Space (slug "lectio", team eric-team-2). Pinned so a fresh clone publishes here
+  // instead of creating a new Space. Serves https://lectio.eamann.com and https://lectio.space.fast
+  "space": "spc_143a2abafa694ca7866f731a5cd23c5c"
 }

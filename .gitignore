@@ -1,2 +1,4 @@
 # Staged public site (tools/build-site.mjs). Rebuilt on every publish.
 _site/
+# Spacefast CLI link state, wherever the CLI decides to write it.
+.spacefast/

@@ -30,10 +30,10 @@
 - All 34 lessons exist. Weeks 1–5 are complete. Week 6: 6.1 and 6.2 use author-written practice text;
   6.3–6.5 are practice protocols (listening loop, word tally, Sunday notes sheet).
 - Audio rendered 2026-11-12 with ElevenLabs voice "Claudiu – Professional Romanian" (HPdbgrGubKiBta6Pq21b).
-  Hosting: Spacefast at lectio.eamann.com, published from `_site/` via `tools/build-site.mjs` so these
-  notes stay private (README "Publish" has the steps).
-- Outstanding: real sermon transcripts from his church for week 6; first Spacefast publish and DNS (his
-  account); if wanted, server-backed progress.
+  Hosting: live on Spacefast at https://lectio.eamann.com since 2026-11-12, published from `_site/` via
+  `tools/build-site.mjs` so these notes stay private (README "Day-to-day" has the steps).
+- Outstanding: real sermon transcripts from his church for week 6; ear-check of a few short audio words
+  (listed in the README); native-speaker review of glosses; if wanted, server-backed progress.
 - Scripture quoted in lessons and the reader was proofread against bible.com (VDC) at build time.
   Sounding-out guides and vocabulary glosses are the author's own and have not been checked by a native speaker.
 
