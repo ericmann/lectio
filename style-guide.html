@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Style guide · Lectio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/theme.css">
+<script src="assets/app.js"></script>
+</head>
+<body>
+<nav class="site-nav" aria-label="Site">
+  <a class="nav-brand" href="index.html">Lectio</a>
+  <span class="nav-sep">›</span><span class="nav-current">Style guide</span>
+  <span class="nav-tools">
+    <button class="btn btn--ghost" type="button" data-toggle="marks" aria-pressed="true">Highlight ă â î ș ț</button>
+    <button class="btn btn--ghost" type="button" data-toggle="theme" aria-pressed="false">Night</button>
+  </span>
+</nav>
+<main class="page">
+  <header class="lesson__hero">
+    <p class="eyebrow">The bible for this course</p>
+    <h1>Style guide</h1>
+    <p>Every colour, typeface and component lives in <span class="kbd">assets/theme.css</span>. Change it there and every page follows.</p>
+  </header>
+
+  <section class="lesson__body">
+    <h2>Identity</h2>
+    <p><strong>Lectio</strong>, Latin for “a reading”. The look is a psalter: parchment, ink, the blue of the Voroneț frescoes, and rubric red for the letters that matter.</p>
+    <p><strong>Tone:</strong> light, dry, brief. One small joke per lesson, never at the reader's expense. The sacred texts are treated plainly and with respect.</p>
+    <p><strong>Objective:</strong> follow a sermon at church by spring.</p>
+  </section>
+
+  <section>
+    <h2>Colour</h2>
+    <p class="muted">Use the Night button above to see the second theme. Both meet 4.5:1 contrast for body text.</p>
+    <div class="swatches" id="swatches"></div>
+  </section>
+
+  <section class="lesson__body">
+    <h2>Typography</h2>
+    <h1>Heading one, Literata</h1>
+    <h2>Heading two</h2>
+    <h3>Heading three</h3>
+    <p>Body prose is Literata at a generous line height, capped at about 66 characters a line. Paragraphs stay under five lines.</p>
+    <p>Romanian is always set in Atkinson Hyperlegible, a face designed so similar letters stay distinct, and always a step larger than the English around it: <span class="ro" lang="ro">Mulțumesc, și vă rog să citiți încă o dată.</span></p>
+    <p class="ro ro--line" lang="ro">Împărăția · sfânt · credință · greșeală · pământ</p>
+    <p><span class="ro ro--display" lang="ro">ă â î ș ț</span></p>
+    <p class="small muted">Rule: any Romanian word, anywhere, carries <span class="kbd">lang="ro"</span> and the class <span class="kbd">ro</span>. The script then marks the five letters automatically.</p>
+  </section>
+
+  <section class="lesson__body">
+    <h2>Components</h2>
+    <p><span class="tag">25 min</span><span class="tag tag--live">In this preview</span></p>
+    <p><button class="btn btn--primary" type="button">Primary</button> <button class="btn" type="button">Default</button> <button class="btn btn--ghost" type="button">Ghost</button></p>
+    <aside class="callout"><p><strong>Note.</strong> For the reason behind a rule.</p></aside>
+    <aside class="callout callout--warning"><p><strong>Warning.</strong> For traps: old spellings, false friends.</p></aside>
+    <aside class="callout callout--success"><p><strong>Check yourself.</strong> For answers the reader opens on purpose.</p></aside>
+    <aside class="callout callout--narrator"><p>The narrator's aside. This is where the one joke goes.</p></aside>
+    <p class="pullquote">A letter makes its sound and keeps making it.</p>
+    <div class="progress-bar"><div class="progress-bar__fill" id="demo-fill"></div></div>
+    <hr class="divider">
+    <div class="tool-frame">
+      <p class="tool-frame__title">Tool frame</p>
+      <p>Every drill and widget sits in this frame, wider than the prose so it reads as a break.</p>
+    </div>
+    <figure class="figure">
+      <p class="ro ro--line" lang="ro">Tatăl nostru care ești în ceruri!</p>
+      <figcaption class="figure__caption">Figures carry a caption that says what to notice.</figcaption>
+    </figure>
+  </section>
+
+  <section class="lesson__body">
+    <h2>Device and accessibility choices</h2>
+    <ul>
+      <li>Desktop first, checked at 375, 768 and 1280 pixels wide. Tap targets are at least 44 pixels.</li>
+      <li>The red on marked letters is an aid, never the only signal; the mark itself is always there, and the highlight can be switched off.</li>
+      <li>Audio is optional everywhere. It uses the device's own Romanian voice when one exists and says so when it doesn't.</li>
+      <li>Reduced-motion settings are respected. Everything is reachable by keyboard.</li>
+    </ul>
+
+    <h2>Don't</h2>
+    <ul>
+      <li>Don't set Romanian in the body serif or at body size.</li>
+      <li>Don't use red for anything except the five letters, the eyebrow labels and errors.</li>
+      <li>Don't state a fact about the language without a link, or mark it as experience.</li>
+      <li>Don't put colours, fonts or sizes in a page. They belong in the theme.</li>
+    </ul>
+  </section>
+</main>
+<footer class="site-footer">
+  <span>Designed for <a href="https://eamann.com">Eric Mann</a></span>
+  <a href="style-guide.html">Style guide</a>
+  <a href="credits.html">Credits and sources</a>
+</footer>
+<script>
+(function () {
+  var tokens = [
+    ["--color-bg", "page"], ["--color-bg-subtle", "callouts"], ["--color-surface", "cards"],
+    ["--color-text", "ink"], ["--color-text-muted", "captions"], ["--color-primary", "links, progress"],
+    ["--color-accent", "the five letters"], ["--color-gold", "narrator"], ["--color-success", "right answers"],
+    ["--color-warning", "traps"], ["--color-border", "rules"]
+  ];
+  var box = document.getElementById("swatches");
+  tokens.forEach(function (t) {
+    var s = document.createElement("div"); s.className = "swatch";
+    var chip = document.createElement("div"); chip.className = "swatch__chip"; chip.style.background = "var(" + t[0] + ")";
+    var label = document.createElement("div"); label.className = "swatch__label"; label.textContent = t[0] + " · " + t[1];
+    s.appendChild(chip); s.appendChild(label); box.appendChild(s);
+  });
+  document.getElementById("demo-fill").style.width = "40%";
+})();
+</script>
+</body>
+</html>

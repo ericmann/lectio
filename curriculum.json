@@ -1,0 +1,299 @@
+{
+  "version": "1.1",
+  "topic": "Romanian, reading first",
+  "learner": {
+    "name": "Eric Mann",
+    "objective": "Follow a sermon at church by spring.",
+    "learning_style": [
+      "mixed: drills, real texts with glosses, short rule explanations"
+    ],
+    "comfort_level": "technical",
+    "device_target": "desktop first, phone when travelling",
+    "timeframe": "4-6 weeks, 20-30 min a day in the early morning",
+    "preferred_tone": "lighter; dry, brief",
+    "constraints": [
+      "often cannot listen or speak aloud",
+      "diacritics were hard to read in other apps",
+      "the course is a surprise for his family"
+    ]
+  },
+  "builder": {
+    "credit": "Designed for Eric Mann",
+    "links": {
+      "site": "https://eamann.com"
+    }
+  },
+  "design": {
+    "aesthetic": "Psalter: parchment, ink, Voroneț blue, rubric red",
+    "theme_css": "assets/theme.css",
+    "entry": "index.html",
+    "primary_device": "responsive",
+    "storage_namespace": "ro_"
+  },
+  "context": {
+    "church": "Romanian Baptist Church of Portland (rbcportland.com); streams on YouTube; pastor sometimes mixes English and Romanian",
+    "bible": "Cornilescu assumed; edition not confirmed",
+    "audio": "device voice by default; tools/render-audio.mjs renders ElevenLabs files once",
+    "hosting": "static; Spacefast candidate",
+    "week6": "6.1-6.2 use author-written practice text; 6.3-6.5 are practice protocols that work with the practice sermon now and with the learner's own church sermons once he supplies transcripts",
+    "reader": "11 passages in assets/passages.js with a shared glossary (LECTIO_GLOSS); Scripture verses were proofread against bible.com VDC at build time"
+  },
+  "modules": [
+    {
+      "id": "module-01",
+      "title": "Cinci litere · Five letters and no excuses",
+      "status": "built",
+      "lessons": [
+        {
+          "id": "1.1",
+          "title": "The five marked letters",
+          "path": "module-01-litere/lesson-01-cinci-litere.html",
+          "status": "not_started"
+        },
+        {
+          "id": "1.2",
+          "title": "C and G, the letters that change their minds",
+          "path": "module-01-litere/lesson-02-c-si-g.html",
+          "status": "not_started"
+        },
+        {
+          "id": "1.3",
+          "title": "The whispered final -i, and where the stress lands",
+          "path": "module-01-litere/lesson-03-i-final.html",
+          "status": "not_started"
+        },
+        {
+          "id": "1.4",
+          "title": "Sixty words you already know",
+          "path": "module-01-litere/lesson-04-cuvinte-cunoscute.html",
+          "status": "not_started"
+        },
+        {
+          "id": "1.5",
+          "title": "Checkpoint: Tatăl nostru, start to finish",
+          "path": "module-01-litere/lesson-05-tatal-nostru.html",
+          "status": "not_started"
+        }
+      ]
+    },
+    {
+      "id": "module-02",
+      "title": "Cuvinte mici · Small words doing heavy lifting",
+      "status": "built",
+      "lessons": [
+        {
+          "id": "2.1",
+          "title": "I, you, we: pronouns, a fi and a avea",
+          "path": "module-02-cuvinte-mici/lesson-01-eu-tu-noi.html",
+          "status": "not_started"
+        },
+        {
+          "id": "2.2",
+          "title": "The article that sticks to the end of the noun",
+          "path": "module-02-cuvinte-mici/lesson-02-articolul.html",
+          "status": "not_started"
+        },
+        {
+          "id": "2.3",
+          "title": "In, on, with, from: the prepositions",
+          "path": "module-02-cuvinte-mici/lesson-03-prepozitii.html",
+          "status": "not_started"
+        },
+        {
+          "id": "2.4",
+          "title": "And, but, because, therefore",
+          "path": "module-02-cuvinte-mici/lesson-04-conjunctii.html",
+          "status": "not_started"
+        },
+        {
+          "id": "2.5",
+          "title": "Numbers, days, and telling when",
+          "path": "module-02-cuvinte-mici/lesson-05-numere-si-zile.html",
+          "status": "not_started"
+        },
+        {
+          "id": "2.6",
+          "title": "Checkpoint: read a church bulletin",
+          "path": "module-02-cuvinte-mici/lesson-06-buletin.html",
+          "status": "not_started"
+        }
+      ]
+    },
+    {
+      "id": "module-03",
+      "title": "Cuvintele bisericii · The church's vocabulary",
+      "status": "built",
+      "lessons": [
+        {
+          "id": "3.1",
+          "title": "God, Lord, Spirit: the names",
+          "path": "module-03-biserica/lesson-01-numele.html",
+          "status": "not_started"
+        },
+        {
+          "id": "3.2",
+          "title": "Grace, faith, sin, forgiveness, salvation",
+          "path": "module-03-biserica/lesson-02-har-si-credinta.html",
+          "status": "not_started"
+        },
+        {
+          "id": "3.3",
+          "title": "Prayer, praise, and the order of a service",
+          "path": "module-03-biserica/lesson-03-rugaciune-si-lauda.html",
+          "status": "not_started"
+        },
+        {
+          "id": "3.4",
+          "title": "Brothers, sisters, and who is who",
+          "path": "module-03-biserica/lesson-04-frati-si-surori.html",
+          "status": "not_started"
+        },
+        {
+          "id": "3.5",
+          "title": "The church year: Christmas to Easter",
+          "path": "module-03-biserica/lesson-05-sarbatori.html",
+          "status": "not_started"
+        },
+        {
+          "id": "3.6",
+          "title": "Checkpoint: a Sunday welcome, line by line",
+          "path": "module-03-biserica/lesson-06-bun-venit.html",
+          "status": "not_started"
+        }
+      ]
+    },
+    {
+      "id": "module-04",
+      "title": "Verbe · Who did what, and when",
+      "status": "built",
+      "lessons": [
+        {
+          "id": "4.1",
+          "title": "The present tense and its four families",
+          "path": "module-04-verbe/lesson-01-prezent.html",
+          "status": "not_started"
+        },
+        {
+          "id": "4.2",
+          "title": "The past with am, ai, a",
+          "path": "module-04-verbe/lesson-02-trecut.html",
+          "status": "not_started"
+        },
+        {
+          "id": "4.3",
+          "title": "Să: the word sermons run on",
+          "path": "module-04-verbe/lesson-03-sa.html",
+          "status": "not_started"
+        },
+        {
+          "id": "4.4",
+          "title": "Commands and requests",
+          "path": "module-04-verbe/lesson-04-imperativ.html",
+          "status": "not_started"
+        },
+        {
+          "id": "4.5",
+          "title": "The future, two ways",
+          "path": "module-04-verbe/lesson-05-viitor.html",
+          "status": "not_started"
+        },
+        {
+          "id": "4.6",
+          "title": "Checkpoint: a parable in three tenses",
+          "path": "module-04-verbe/lesson-06-trei-timpuri.html",
+          "status": "not_started"
+        }
+      ]
+    },
+    {
+      "id": "module-05",
+      "title": "Scriptura · Passages you already know",
+      "status": "built",
+      "lessons": [
+        {
+          "id": "5.1",
+          "title": "Psalmul 23",
+          "path": "module-05-scriptura/lesson-01-psalmul-23.html",
+          "status": "not_started"
+        },
+        {
+          "id": "5.2",
+          "title": "Ioan 3:16 and the opening of Ioan",
+          "path": "module-05-scriptura/lesson-02-ioan.html",
+          "status": "not_started"
+        },
+        {
+          "id": "5.3",
+          "title": "Fericirile: the Beatitudes",
+          "path": "module-05-scriptura/lesson-03-fericirile.html",
+          "status": "not_started"
+        },
+        {
+          "id": "5.4",
+          "title": "1 Corinteni 13",
+          "path": "module-05-scriptura/lesson-04-1-corinteni-13.html",
+          "status": "not_started"
+        },
+        {
+          "id": "5.5",
+          "title": "The prodigal son",
+          "path": "module-05-scriptura/lesson-05-fiul-risipitor.html",
+          "status": "not_started"
+        },
+        {
+          "id": "5.6",
+          "title": "Checkpoint: a chapter, unassisted",
+          "path": "module-05-scriptura/lesson-06-un-capitol.html",
+          "status": "not_started"
+        }
+      ]
+    },
+    {
+      "id": "module-06",
+      "title": "Predica · From page to pulpit",
+      "status": "built",
+      "lessons": [
+        {
+          "id": "6.1",
+          "title": "How a sermon is built: the signpost phrases",
+          "path": "module-06-predica/lesson-01-repere.html",
+          "status": "not_started"
+        },
+        {
+          "id": "6.2",
+          "title": "Reading a sermon transcript",
+          "path": "module-06-predica/lesson-02-o-predica.html",
+          "status": "not_started"
+        },
+        {
+          "id": "6.3",
+          "title": "Listening with the text in front of you",
+          "path": "module-06-predica/lesson-03-cu-textul.html",
+          "status": "not_started"
+        },
+        {
+          "id": "6.4",
+          "title": "Listening with the text put away",
+          "path": "module-06-predica/lesson-04-fara-text.html",
+          "status": "not_started"
+        },
+        {
+          "id": "6.5",
+          "title": "Capstone: one full sermon, and your notes sheet for Sunday",
+          "path": "module-06-predica/lesson-05-duminica.html",
+          "status": "not_started"
+        }
+      ]
+    }
+  ],
+  "progress": {
+    "started_at": "2026-11-11",
+    "last_session": "2026-11-11",
+    "modules_built": 6,
+    "modules_total": 6,
+    "lessons_total": 34,
+    "current_module": "module-01",
+    "current_lesson": "1.1",
+    "total_sessions": 0
+  }
+}

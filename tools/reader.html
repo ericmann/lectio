@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The reader · Lectio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/theme.css">
+<script src="../assets/app.js"></script>
+<script src="../assets/passages.js"></script>
+</head>
+<body>
+<nav class="site-nav" aria-label="Site">
+  <a class="nav-brand" href="../index.html">Lectio</a>
+  <span class="nav-sep">›</span><span class="nav-current">The reader</span>
+  <span class="nav-tools">
+    <button class="btn btn--ghost" type="button" data-toggle="marks" aria-pressed="true">Highlight ă â î ș ț</button>
+    <button class="btn btn--ghost" type="button" data-toggle="theme" aria-pressed="false">Night</button>
+  </span>
+</nav>
+<main class="page">
+  <header class="lesson__hero">
+    <p class="eyebrow">The reader</p>
+    <h1><span class="ro" lang="ro" id="p-title"></span></h1>
+    <p><span id="p-ref"></span>. Read a line, guess, then tap any word you want to check. Words you mark as known stay known in every passage.</p>
+  </header>
+  <nav aria-label="Passages"><ul class="passage-list" id="p-list"></ul></nav>
+  <section class="tool-frame" aria-label="Reader">
+    <div class="tool-frame__bar">
+      <button class="btn" type="button" id="interlinear" aria-pressed="false">English under every word</button>
+      <button class="btn" type="button" id="reset">Reset known words</button>
+      <span class="muted small" id="known-count" role="status"></span>
+    </div>
+    <div class="progress-bar" role="progressbar" aria-label="Words known in this passage" aria-valuemin="0" aria-valuenow="0" id="bar"><div class="progress-bar__fill" id="bar-fill"></div></div>
+    <div id="passage" lang="ro" class="ro ro--line"></div>
+    <div class="gloss-panel" id="panel" aria-live="polite"></div>
+  </section>
+  <section class="lesson__body">
+    <aside class="callout"><p><strong>What to notice.</strong> <span id="p-notice"></span></p></aside>
+    <p class="small muted">Text: <span id="p-source"></span> <a id="p-href" href="#">Open the source</a>.</p>
+  </section>
+</main>
+<footer class="site-footer">
+  <span>Designed for <a href="https://eamann.com">Eric Mann</a></span>
+  <a href="../style-guide.html">Style guide</a>
+  <a href="../credits.html">Credits and sources</a>
+</footer>
+<script>(function () {
+  var all = window.LECTIO_PASSAGES || {}, G = window.LECTIO_GLOSS || {};
+  var passage = document.getElementById("passage"), panel = document.getElementById("panel");
+  var known = Lectio.store.get("known", {}), keys = {}, total = 0, active = null, P = null;
+  function keyOf(s) { return s.toLowerCase().replace(/[.,;:!?„”«»"()]/g, ""); }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+  var list = document.getElementById("p-list");
+  Object.keys(all).forEach(function (id) {
+    var li = el("li"), a = el("a", "btn"), t = el("span", "", all[id].title); t.lang = "ro"; a.href = "#" + id; a.appendChild(t); li.appendChild(a); list.appendChild(li);
+  });
+
+  function load() {
+    var id = (location.hash || "").replace("#", "");
+    P = all[id] || all["tatal-nostru"];
+    document.getElementById("p-title").textContent = P.title;
+    document.getElementById("p-ref").textContent = P.ref;
+    document.getElementById("p-notice").textContent = P.notice;
+    document.getElementById("p-source").textContent = P.source;
+    document.getElementById("p-href").href = P.href;
+    passage.innerHTML = ""; keys = {}; total = 0; active = null;
+    panel.innerHTML = ""; panel.appendChild(el("p", "muted", "Tap a word."));
+    P.lines.forEach(function (line) {
+      var p = el("p", "reader__line");
+      if (line[0]) { var ref = el("span", "reader__ref", line[0]); ref.lang = "en"; p.appendChild(ref); }
+      line[1].split(/\s+/).forEach(function (w) {
+        var k = keyOf(w);
+        if (!/[a-zăâîșț]/.test(k)) { p.appendChild(document.createTextNode(w + " ")); return; }
+        var g = (P.gloss && P.gloss[k]) || G[k] || ["not glossed yet", ""];
+        if (!keys[k]) { keys[k] = true; total++; }
+        var b = el("button", "word"); b.type = "button"; b.setAttribute("data-key", k);
+        b.appendChild(el("span", "", w));
+        var under = el("span", "word__under", g[0]); under.lang = "en"; b.appendChild(under);
+        b.addEventListener("click", function () { show(b, w, k, g); });
+        p.appendChild(b); p.appendChild(document.createTextNode(" "));
+      });
+      var hear = el("button", "btn btn--ghost", "Hear line"); hear.type = "button"; hear.lang = "en"; hear.setAttribute("data-speak", line[1]);
+      p.appendChild(hear); passage.appendChild(p);
+    });
+    Lectio.markDiacritics(document); paint();
+  }
+
+  function paint() {
+    var n = 0, k;
+    for (k in keys) if (known[k]) n++;
+    var words = passage.querySelectorAll(".word");
+    for (var i = 0; i < words.length; i++) words[i].classList.toggle("is-known", !!known[words[i].getAttribute("data-key")]);
+    document.getElementById("known-count").textContent = n + " of " + total + " words known";
+    var bar = document.getElementById("bar");
+    bar.setAttribute("aria-valuemax", total); bar.setAttribute("aria-valuenow", n);
+    document.getElementById("bar-fill").style.width = (total ? n / total * 100 : 0) + "%";
+  }
+
+  function show(btn, w, k, g) {
+    if (active) active.classList.remove("is-active");
+    active = btn; btn.classList.add("is-active"); panel.innerHTML = "";
+    var word = el("p", "ro gloss-panel__word", w.replace(/[.,;:!?„”«»"()]/g, "")); word.lang = "ro";
+    var gloss = el("p"); gloss.appendChild(el("strong", "", g[0]));
+    panel.appendChild(word); panel.appendChild(gloss);
+    if (g[1]) { var note = el("p", "muted", g[1]); panel.appendChild(note); }
+    var actions = el("div", "gloss-panel__actions");
+    var kb = el("button", "btn btn--primary", known[k] ? "Still learning this" : "I know this"); kb.type = "button";
+    kb.addEventListener("click", function () {
+      known[k] = !known[k]; Lectio.store.set("known", known); paint();
+      kb.textContent = known[k] ? "Still learning this" : "I know this";
+    });
+    var hb = el("button", "btn", "Hear it"); hb.type = "button"; hb.setAttribute("data-speak", k);
+    actions.appendChild(kb); actions.appendChild(hb); panel.appendChild(actions);
+    Lectio.markDiacritics(panel);
+  }
+
+  var inter = document.getElementById("interlinear");
+  inter.addEventListener("click", function () {
+    inter.setAttribute("aria-pressed", passage.classList.toggle("reader__interlinear") ? "true" : "false");
+  });
+  document.getElementById("reset").addEventListener("click", function () {
+    known = {}; Lectio.store.set("known", known); paint();
+  });
+  window.addEventListener("hashchange", load);
+  load();
+})();</script>
+</body>
+</html>

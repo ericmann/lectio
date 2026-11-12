@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lectio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/theme.css">
+<script src="assets/app.js"></script>
+</head>
+<body>
+<nav class="site-nav" aria-label="Site">
+  <a class="nav-brand" href="index.html">Lectio</a>
+  <span class="nav-sep">›</span><span class="nav-current">Dashboard</span>
+  <span class="nav-tools">
+    <button class="btn btn--ghost" type="button" data-toggle="marks" aria-pressed="true">Highlight ă â î ș ț</button>
+    <button class="btn btn--ghost" type="button" data-toggle="theme" aria-pressed="false">Night</button>
+  </span>
+</nav>
+<main class="page">
+  <section class="card objective">
+    <p class="eyebrow">The objective</p>
+    <p class="objective__text">Follow a sermon at church by spring.</p>
+    <ul class="facts">
+      <li><strong>Rhythm</strong> 20–30 minutes a day, one lesson per sitting</li>
+      <li><strong>Length</strong> 6 weeks · 34 lessons · reading first, listening last</li>
+      <li><strong>Cost</strong> Free. Everything runs in the browser, no accounts</li>
+      <li><strong>Audio</strong> Optional throughout. Every lesson works in silence</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Where you are</h2>
+    <p class="muted"><span id="done-count">0</span> of 34 lessons complete</p>
+    <div class="progress-bar" role="progressbar" aria-label="Course progress" aria-valuemin="0" aria-valuemax="34" aria-valuenow="0" id="bar"><div class="progress-bar__fill" id="bar-fill"></div></div>
+  </section>
+  <section class="grid">
+    <div class="card">
+      <p class="eyebrow">Next</p>
+      <h3 id="next-title"></h3>
+      <p id="next-blurb"></p>
+      <p><span class="tag">25 min</span></p>
+      <a class="btn btn--primary" id="next-link" href="#">Start the lesson</a>
+    </div>
+    <div class="card">
+      <p class="eyebrow">The reader</p>
+      <h3>Eleven passages</h3>
+      <p>Tap any word to see what it means and how it is built. Words you mark as known stay known everywhere.</p>
+      <p><span class="tag">Open any time</span></p>
+      <a class="btn" href="tools/reader.html">Open the reader</a>
+    </div>
+  </section>
+  <section>
+    <h2>The six weeks</h2>
+    <div class="module"><div class="module__num">1</div><div>
+<h3 class="module__title"><span class="ro" lang="ro">Cinci litere</span> · Five letters and no excuses</h3><ul class="module__lessons"><li data-lesson="1.1"><a href="module-01-litere/lesson-01-cinci-litere.html">1.1 The five marked letters</a></li><li data-lesson="1.2"><a href="module-01-litere/lesson-02-c-si-g.html">1.2 C and G, the letters that change their minds</a></li><li data-lesson="1.3"><a href="module-01-litere/lesson-03-i-final.html">1.3 The whispered final -i, and where the stress lands</a></li><li data-lesson="1.4"><a href="module-01-litere/lesson-04-cuvinte-cunoscute.html">1.4 Sixty words you already know</a></li><li data-lesson="1.5"><a href="module-01-litere/lesson-05-tatal-nostru.html">1.5 Checkpoint: Tatăl nostru, start to finish</a></li></ul></div></div><div class="module"><div class="module__num">2</div><div>
+<h3 class="module__title"><span class="ro" lang="ro">Cuvinte mici</span> · Small words doing heavy lifting</h3><ul class="module__lessons"><li data-lesson="2.1"><a href="module-02-cuvinte-mici/lesson-01-eu-tu-noi.html">2.1 I, you, we: pronouns, <em>a fi</em> and <em>a avea</em></a></li><li data-lesson="2.2"><a href="module-02-cuvinte-mici/lesson-02-articolul.html">2.2 The article that sticks to the end of the noun</a></li><li data-lesson="2.3"><a href="module-02-cuvinte-mici/lesson-03-prepozitii.html">2.3 In, on, with, from: the prepositions</a></li><li data-lesson="2.4"><a href="module-02-cuvinte-mici/lesson-04-conjunctii.html">2.4 And, but, because, therefore</a></li><li data-lesson="2.5"><a href="module-02-cuvinte-mici/lesson-05-numere-si-zile.html">2.5 Numbers, days, and telling when</a></li><li data-lesson="2.6"><a href="module-02-cuvinte-mici/lesson-06-buletin.html">2.6 Checkpoint: read a church bulletin</a></li></ul></div></div><div class="module"><div class="module__num">3</div><div>
+<h3 class="module__title"><span class="ro" lang="ro">Cuvintele bisericii</span> · The church's vocabulary</h3><ul class="module__lessons"><li data-lesson="3.1"><a href="module-03-biserica/lesson-01-numele.html">3.1 God, Lord, Spirit: the names</a></li><li data-lesson="3.2"><a href="module-03-biserica/lesson-02-har-si-credinta.html">3.2 Grace, faith, sin, forgiveness, salvation</a></li><li data-lesson="3.3"><a href="module-03-biserica/lesson-03-rugaciune-si-lauda.html">3.3 Prayer, praise, and the order of a service</a></li><li data-lesson="3.4"><a href="module-03-biserica/lesson-04-frati-si-surori.html">3.4 Brothers, sisters, and who is who</a></li><li data-lesson="3.5"><a href="module-03-biserica/lesson-05-sarbatori.html">3.5 The church year: Christmas to Easter</a></li><li data-lesson="3.6"><a href="module-03-biserica/lesson-06-bun-venit.html">3.6 Checkpoint: a Sunday welcome, line by line</a></li></ul></div></div><div class="module"><div class="module__num">4</div><div>
+<h3 class="module__title"><span class="ro" lang="ro">Verbe</span> · Who did what, and when</h3><ul class="module__lessons"><li data-lesson="4.1"><a href="module-04-verbe/lesson-01-prezent.html">4.1 The present tense and its four families</a></li><li data-lesson="4.2"><a href="module-04-verbe/lesson-02-trecut.html">4.2 The past with <em>am, ai, a</em></a></li><li data-lesson="4.3"><a href="module-04-verbe/lesson-03-sa.html">4.3 <em>Să</em>: the word sermons run on</a></li><li data-lesson="4.4"><a href="module-04-verbe/lesson-04-imperativ.html">4.4 Commands and requests</a></li><li data-lesson="4.5"><a href="module-04-verbe/lesson-05-viitor.html">4.5 The future, two ways</a></li><li data-lesson="4.6"><a href="module-04-verbe/lesson-06-trei-timpuri.html">4.6 Checkpoint: a parable in three tenses</a></li></ul></div></div><div class="module"><div class="module__num">5</div><div>
+<h3 class="module__title"><span class="ro" lang="ro">Scriptura</span> · Passages you already know</h3><ul class="module__lessons"><li data-lesson="5.1"><a href="module-05-scriptura/lesson-01-psalmul-23.html">5.1 Psalmul 23</a></li><li data-lesson="5.2"><a href="module-05-scriptura/lesson-02-ioan.html">5.2 Ioan 3:16 and the opening of Ioan</a></li><li data-lesson="5.3"><a href="module-05-scriptura/lesson-03-fericirile.html">5.3 <em>Fericirile</em>: the Beatitudes</a></li><li data-lesson="5.4"><a href="module-05-scriptura/lesson-04-1-corinteni-13.html">5.4 1 Corinteni 13</a></li><li data-lesson="5.5"><a href="module-05-scriptura/lesson-05-fiul-risipitor.html">5.5 The prodigal son</a></li><li data-lesson="5.6"><a href="module-05-scriptura/lesson-06-un-capitol.html">5.6 Checkpoint: a chapter, unassisted</a></li></ul></div></div><div class="module"><div class="module__num">6</div><div>
+<h3 class="module__title"><span class="ro" lang="ro">Predica</span> · From page to pulpit</h3><ul class="module__lessons"><li data-lesson="6.1"><a href="module-06-predica/lesson-01-repere.html">6.1 How a sermon is built: the signpost phrases</a></li><li data-lesson="6.2"><a href="module-06-predica/lesson-02-o-predica.html">6.2 Reading a sermon transcript</a></li><li data-lesson="6.3"><a href="module-06-predica/lesson-03-cu-textul.html">6.3 Listening with the text in front of you</a></li><li data-lesson="6.4"><a href="module-06-predica/lesson-04-fara-text.html">6.4 Listening with the text put away</a></li><li data-lesson="6.5"><a href="module-06-predica/lesson-05-duminica.html">6.5 Capstone: one full sermon, and your notes sheet for Sunday</a></li></ul></div></div>
+    <aside class="callout callout--narrator">
+      <p>After week six the same reader takes technical text. The plan is a second phase built on your own writing, translated a paragraph at a time.</p>
+    </aside>
+  </section>
+</main>
+<footer class="site-footer">
+  <span>Designed for <a href="https://eamann.com">Eric Mann</a></span>
+  <a href="style-guide.html">Style guide</a>
+  <a href="credits.html">Credits and sources</a>
+</footer>
+<script>(function () {
+  var LESSONS = [["1.1", "module-01-litere/lesson-01-cinci-litere.html", "The five marked letters"], ["1.2", "module-01-litere/lesson-02-c-si-g.html", "C and G, the letters that change their minds"], ["1.3", "module-01-litere/lesson-03-i-final.html", "The whispered final -i, and where the stress lands"], ["1.4", "module-01-litere/lesson-04-cuvinte-cunoscute.html", "Sixty words you already know"], ["1.5", "module-01-litere/lesson-05-tatal-nostru.html", "Checkpoint: Tatăl nostru, start to finish"], ["2.1", "module-02-cuvinte-mici/lesson-01-eu-tu-noi.html", "I, you, we: pronouns, a fi and a avea"], ["2.2", "module-02-cuvinte-mici/lesson-02-articolul.html", "The article that sticks to the end of the noun"], ["2.3", "module-02-cuvinte-mici/lesson-03-prepozitii.html", "In, on, with, from: the prepositions"], ["2.4", "module-02-cuvinte-mici/lesson-04-conjunctii.html", "And, but, because, therefore"], ["2.5", "module-02-cuvinte-mici/lesson-05-numere-si-zile.html", "Numbers, days, and telling when"], ["2.6", "module-02-cuvinte-mici/lesson-06-buletin.html", "Checkpoint: read a church bulletin"], ["3.1", "module-03-biserica/lesson-01-numele.html", "God, Lord, Spirit: the names"], ["3.2", "module-03-biserica/lesson-02-har-si-credinta.html", "Grace, faith, sin, forgiveness, salvation"], ["3.3", "module-03-biserica/lesson-03-rugaciune-si-lauda.html", "Prayer, praise, and the order of a service"], ["3.4", "module-03-biserica/lesson-04-frati-si-surori.html", "Brothers, sisters, and who is who"], ["3.5", "module-03-biserica/lesson-05-sarbatori.html", "The church year: Christmas to Easter"], ["3.6", "module-03-biserica/lesson-06-bun-venit.html", "Checkpoint: a Sunday welcome, line by line"], ["4.1", "module-04-verbe/lesson-01-prezent.html", "The present tense and its four families"], ["4.2", "module-04-verbe/lesson-02-trecut.html", "The past with am, ai, a"], ["4.3", "module-04-verbe/lesson-03-sa.html", "Să: the word sermons run on"], ["4.4", "module-04-verbe/lesson-04-imperativ.html", "Commands and requests"], ["4.5", "module-04-verbe/lesson-05-viitor.html", "The future, two ways"], ["4.6", "module-04-verbe/lesson-06-trei-timpuri.html", "Checkpoint: a parable in three tenses"], ["5.1", "module-05-scriptura/lesson-01-psalmul-23.html", "Psalmul 23"], ["5.2", "module-05-scriptura/lesson-02-ioan.html", "Ioan 3:16 and the opening of Ioan"], ["5.3", "module-05-scriptura/lesson-03-fericirile.html", "Fericirile: the Beatitudes"], ["5.4", "module-05-scriptura/lesson-04-1-corinteni-13.html", "1 Corinteni 13"], ["5.5", "module-05-scriptura/lesson-05-fiul-risipitor.html", "The prodigal son"], ["5.6", "module-05-scriptura/lesson-06-un-capitol.html", "Checkpoint: a chapter, unassisted"], ["6.1", "module-06-predica/lesson-01-repere.html", "How a sermon is built: the signpost phrases"], ["6.2", "module-06-predica/lesson-02-o-predica.html", "Reading a sermon transcript"], ["6.3", "module-06-predica/lesson-03-cu-textul.html", "Listening with the text in front of you"], ["6.4", "module-06-predica/lesson-04-fara-text.html", "Listening with the text put away"], ["6.5", "module-06-predica/lesson-05-duminica.html", "Capstone: one full sermon, and your notes sheet for Sunday"]], TOTAL = LESSONS.length;
+  var done = Lectio.store.get("done", {}), n = 0, i;
+  for (i = 0; i < LESSONS.length; i++) if (done[LESSONS[i][0]]) n++;
+  document.getElementById("done-count").textContent = n;
+  document.getElementById("bar").setAttribute("aria-valuenow", n);
+  document.getElementById("bar-fill").style.width = (n / TOTAL * 100) + "%";
+  var items = document.querySelectorAll("[data-lesson]");
+  for (i = 0; i < items.length; i++) if (done[items[i].getAttribute("data-lesson")]) items[i].className = "is-done";
+  var next = null;
+  for (i = 0; i < LESSONS.length; i++) if (!done[LESSONS[i][0]]) { next = LESSONS[i]; break; }
+  var t = document.getElementById("next-title"), b = document.getElementById("next-blurb"), a = document.getElementById("next-link");
+  if (next) { t.textContent = next[0] + " · " + next[2]; b.textContent = "One sitting. Read, drill, then read something real."; a.href = next[1]; }
+  else { t.textContent = "Course complete"; b.textContent = "Every lesson is done. Keep the Sunday notes sheet going."; a.href = "module-06-predica/lesson-05-duminica.html"; a.textContent = "Open the notes sheet"; }
+})();</script>
+</body>
+</html>
